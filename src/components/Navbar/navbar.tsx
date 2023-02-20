@@ -16,9 +16,9 @@ export default function Navbar() {
                 <div className={styles.linked}>
                     <ul className={styles.list}>
                         <li className={styles.item}>Intro</li>
-                        <li className={styles.item}>Zero OS</li>
+                        <li className={styles.item}>Ultra OS</li>
                         <li className={styles.item}>Integrations</li>
-                        <li className={styles.item}>Zero ID</li>
+                        <li className={styles.item}>Ultra ID</li>
                     </ul>
                 </div>
                 <div className={styles.buttongroup}>

@@ -3,6 +3,7 @@ import styles from '@/styles/Home.module.css'
 import { Canvas } from '@react-three/fiber';
 import Cube from '../components/cube/cube';
 import Navbar from '@/components/Navbar/navbar';
+import { Suspense } from 'react';
 
 export default function Home() {
 
@@ -16,7 +17,9 @@ export default function Home() {
         <Canvas >
           <ambientLight intensity={0.4} />
           <pointLight position={[14, 12, 11]} />
+          <Suspense fallback={null}>
           <Cube />
+          </Suspense>
         </Canvas>
       </main>
     </>
