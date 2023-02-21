@@ -4,6 +4,11 @@ import { Canvas } from '@react-three/fiber';
 import Cube from '../components/cube/cube';
 import Navbar from '@/components/Navbar/navbar';
 import { Suspense } from 'react';
+import Model from '../components/model/model';
+import Model2 from '../components/model2/model2';
+
+import { Environment, OrbitControls } from "@react-three/drei";
+
 
 export default function Home() {
 
@@ -12,13 +17,15 @@ export default function Home() {
       <Head>
         <title>Ultra Tech</title>
       </Head>
-      <Navbar/>
+      <Navbar />
       <main className={styles.canvas}>
         <Canvas >
           <ambientLight intensity={0.4} />
           <pointLight position={[14, 12, 11]} />
           <Suspense fallback={null}>
-          <Cube />
+            <Model />
+            <OrbitControls />
+            <Environment preset='night' ground={{ scale: 500 }} />
           </Suspense>
         </Canvas>
       </main>

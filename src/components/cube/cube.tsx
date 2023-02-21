@@ -8,13 +8,19 @@ export default function Cube() {
 
     const meshRef = useRef<Mesh>(null);
     const [active, setActive] = useState(false);
+
+    interface ModelProps {
+        url: string;
+    }
+
+    //Texture Loading
     const [colorMap, displacementMap, normalMap, roughnessMap, aoMap] = useLoader(TextureLoader, ['PavingStones092_2K_Color.jpg',
         'PavingStones092_2K_Displacement.jpg',
         'PavingStones092_2K_NormalGL.jpg',
         'PavingStones092_2K_Roughness.jpg',
         'PavingStones092_2K_AmbientOcclusion.jpg']);
 
-
+    //Animation loop
     useFrame(() => {
         if (!meshRef.current) {
             return;
